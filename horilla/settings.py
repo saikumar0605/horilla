@@ -43,6 +43,14 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sktech.programming@gmail.com'
+EMAIL_HOST_PASSWORD = 'jihaicwbnxlrdirc'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -126,7 +134,7 @@ else:
                 "DB_NAME",
                 default=os.path.join(
                     BASE_DIR,
-                    "TestDB_Horilla.sqlite3",
+                    "Apexiq.sqlite3",
                 ),
             ),
             "USER": env("DB_USER", default=""),
